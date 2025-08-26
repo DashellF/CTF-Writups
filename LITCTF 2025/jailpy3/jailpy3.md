@@ -23,7 +23,7 @@ print({}.__class__.__subclasses__()[2].copy.__builtins__[{}.__class__.__subclass
 When you try and run this file, it gives you the error: 
 
 `
-$ python3 'code.py'
+$ python3 'code.py' \n
 Segmentation fault
 `
 
@@ -99,7 +99,7 @@ if decoded_content:
         print(f"Error writing to file 'decoded1.py': {e}")
 ```
 
-With that, you are left with a smaller file 'decoded1.py' that now looks like this
+With that, you are left with a smaller file 'decoded1.py' that now looks like this:
 
 ```
 import collections
@@ -278,17 +278,17 @@ print(__builtins__[chr(__builtins__['__import__']('subprocess').select.POLLIN^__
 
 
 From here, we need to look into the `__builtins__['__import__']('subprocess').select.POLLIN` type lines. They repeat a lot, just with different ending calls. A quick google search tells us that this code is supposed to simply return whatever number `POLLIN` is set to in the subprocess function. Thus, we can replace this whole line with the integer `1` because that is what POLLIN is in subprocess. Another google search tells us what other values are set to:
-`
-POLLIN: 1,
-POLLPRI: 2,
-POLLOUT: 4,
+`\n
+POLLIN: 1,\n
+POLLPRI: 2,\n
+POLLOUT: 4,\n
 POLLRDNORM: 64,
-POLLRDBAND: 128,
-POLLWRNORM: 256,
-POLLWRBAND: 512,
-POLLERR: 8,
-POLLHUP: 16,
-POLLNVAL: 32,
+POLLRDBAND: 128,\n
+POLLWRNORM: 256,\n
+POLLWRBAND: 512,\n
+POLLERR: 8,\n
+POLLHUP: 16,\n
+POLLNVAL: 32,\n
 `
 With this information, we can greatly simplify what is left. Replace all of the `__builtins__['__import__']('subprocess').select.POLLIN` calls with the corresponding integer.
 
@@ -415,7 +415,7 @@ Once we do that, we get a file looking like a lot of these statements
 
 ```
 __builtins__['chr'](__builtins__['__import__']('subprocess').select.POLLPRI
-...
+```
 
 First, let's run our script that replaces `__builtins__['chr']` with `chr` (at this point, you can probably just use a find and replace tool in whatever file editor you want).
 
