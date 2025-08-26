@@ -1,6 +1,6 @@
 # jailpy3
 
-Category: **rev**
+Category: `rev`
 
 Description:
 
@@ -22,16 +22,16 @@ print({}.__class__.__subclasses__()[2].copy.__builtins__[{}.__class__.__subclass
 
 When you try and run this file, it gives you the error: 
 
-'''
+`
 $ python3 'code.py'
 Segmentation fault
-'''
+`
 
 How this file is right now, we can't really understand what is going on.To start us off, let's start simplifying this print statement.
 
 taking a quick glance at this file, we can see there are a lot of 'chr(1^2^32^64)' type statements, which we can simplify pretty easily. 'chr()' is a function from `builtins` that returns a character given that character's ascii table value. the statement '1^2^32^64' can be mathmatecally simplified as just adding 1+2+32+64 because all of these numbers are factors of 2 so xor can be equivalized to addition. Let's first start by going through the file and simplifying all of the xor statements.
 
-'''
+```
 import re
 
 def decode_chr_expressions(file_path):
@@ -97,7 +97,7 @@ if decoded_content:
         print("\nDecoded content successfully saved to 'decoded1.py'")
     except Exception as e:
         print(f"Error writing to file 'decoded1.py': {e}")
-'''
+```
 
 With that, you are left with a smaller file 'decoded1.py' that now looks like this
 
@@ -195,6 +195,7 @@ print({}.__class__.__subclasses__()[2].copy.__builtins__[{}.__class__.__subclass
 ...
 
 .select.POLLRDNORM)).select.POLLRDNORM))
+```
 
 Now it gets a little more complex to simplify. We see a repeated call of `{}.__class__.__subclasses__()[2].copy.__builtins__`. In short, this is just a call to `__builtins__`. We can simply replace all instances of `{}.__class__.__subclasses__()[2].copy.__builtins__` with `__builtins__`. You might think to do this with a find-and-replace tool on a file editing software, but these tools often break or skip instances with large files.
 
@@ -265,7 +266,7 @@ print(__builtins__[__builtins__['chr'](__builtins__['__import__']('subprocess').
 
 after this process, we can see a bunch of the __builtins__['chr'] commands, we already wrote a script that replaces them, so lets use it again! Make sure to update the input and output files.
 
-that leaves us with
+that leaves us with:
 
 ```
 print(__builtins__[chr(__builtins__['__import__']('subprocess').select.POLLIN^__builtins__['__import__']('subprocess').select.POLLPRI^__builtins__['__import__']('subprocess').select.POLLNVAL^__builtins__['__import__']('subprocess').select.POLLRDNORM)+chr(__builtins__['__import__']('subprocess').select.POLLERR^__builtins__['__import__']
@@ -277,7 +278,7 @@ print(__builtins__[chr(__builtins__['__import__']('subprocess').select.POLLIN^__
 
 
 From here, we need to look into the `__builtins__['__import__']('subprocess').select.POLLIN` type lines. They repeat a lot, just with different ending calls. A quick google search tells us that this code is supposed to simply return whatever number `POLLIN` is set to in the subprocess function. Thus, we can replace this whole line with the integer `1` because that is what POLLIN is in subprocess. Another google search tells us what other values are set to:
-
+`
 POLLIN: 1,
 POLLPRI: 2,
 POLLOUT: 4,
@@ -288,7 +289,7 @@ POLLWRBAND: 512,
 POLLERR: 8,
 POLLHUP: 16,
 POLLNVAL: 32,
-
+`
 With this information, we can greatly simplify what is left. Replace all of the `__builtins__['__import__']('subprocess').select.POLLIN` calls with the corresponding integer.
 
 ```
