@@ -6,7 +6,6 @@ Description:
 
 > Made with a burning passion for pyjails (i.e. creating insane payloads just to bypass some random condition), I turned everything in this python script into pyjail tech! Here's a program that's suppose to print a flag. But something seems to be getting in the way...
 
-
 ---
 
 At first, this challenge looks like a simple 'find the error' challenge. We are given a python file with two lines, an import line and an ***11 megabite*** long print statement.
@@ -29,7 +28,7 @@ Segmentation fault
 
 How this file is right now, we can't really understand what is going on.To start us off, let's start simplifying this print statement.
 
-taking a quick glance at this file, we can see there are a lot of 'chr(1^2^32^64)' type statements, which we can simplify pretty easily. 'chr()' is a function from `builtins` that returns a character given that character's ascii table value. the statement '1^2^32^64' can be mathmatecally simplified as just adding 1+2+32+64 because all of these numbers are factors of 2 so xor can be equivalized to addition. Let's first start by going through the file and simplifying all of the xor statements.
+taking a quick glance at this file, we can see there are a lot of `chr(1^2^32^64)` type statements, which we can simplify pretty easily. `chr()` is a function from `builtins` that returns a character given that character's ascii table value. the statement `1^2^32^64` can be mathmatecally simplified as just adding 1+2+32+64 because all of these numbers are factors of 2 so xor can be equivalized to addition. Let's first start by going through the file and simplifying all of the xor statements.
 
 ```
 import re
@@ -278,18 +277,16 @@ print(__builtins__[chr(__builtins__['__import__']('subprocess').select.POLLIN^__
 
 
 From here, we need to look into the `__builtins__['__import__']('subprocess').select.POLLIN` type lines. They repeat a lot, just with different ending calls. A quick google search tells us that this code is supposed to simply return whatever number `POLLIN` is set to in the subprocess function. Thus, we can replace this whole line with the integer `1` because that is what POLLIN is in subprocess. Another google search tells us what other values are set to:
-`\n
-POLLIN: 1,\n
-POLLPRI: 2,\n
-POLLOUT: 4,\n
+POLLIN: 1,
+POLLPRI: 2,
+POLLOUT: 4,
 POLLRDNORM: 64,
-POLLRDBAND: 128,\n
-POLLWRNORM: 256,\n
-POLLWRBAND: 512,\n
-POLLERR: 8,\n
-POLLHUP: 16,\n
-POLLNVAL: 32,\n
-`
+POLLRDBAND: 128,
+POLLWRNORM: 256,
+POLLWRBAND: 512,
+POLLERR: 8,
+POLLHUP: 16,
+POLLNVAL: 32,
 With this information, we can greatly simplify what is left. Replace all of the `__builtins__['__import__']('subprocess').select.POLLIN` calls with the corresponding integer.
 
 ```
