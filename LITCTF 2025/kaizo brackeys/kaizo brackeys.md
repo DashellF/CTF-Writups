@@ -133,7 +133,7 @@ With that, you can now run the kaizo_brackeys.exe file again and breeze through 
 
 By pressing the exit button, all that happens is the game closes. It seems our previous assumption of the flag being in the credits was wrong. Our best bet now is to find more information about the game, and a good way of doing that is through a software called [Asset Ripper](https://assetripper.github.io/AssetRipper/articles/Downloads.html).
 
-Asset Ripper is built for gathering assets for a Unity .exe filespace and peicing them together to create a file that Unity can read again. To use it, run the AssetRipper.GUI.Free.exe file, then in the pop up open your Kaizo Brackeys_Data file through `File` >> `Open Folder`. Once that is done, you can immediately export it as a Unity Project by going to `Export`, Giving it a folder to print to (It will replace all files in that folder if it is not created in a new folder!), then clicking `Export Unity Project`.
+Asset Ripper is built for gathering assets for a Unity .exe filespace and peicing them together to create a file that Unity can read again. To use it, run the AssetRipper.GUI.Free.exe file, then in the pop up open your Kaizo Brackeys_Data file through `File` >> `Open Folder`. Once that is done, you can immediately export it as a Unity Project by going to `Export`, Giving it a folder to print to (IT WILL REPLACE ALL FILES IN A FOLDER if it is not created in a new folder!), then clicking `Export Unity Project`.
 
 One you have the Unity project exported, you can open that file through [Unity](https://unity.com/download).
 
