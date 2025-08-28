@@ -128,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
 This script lets you move around with wasd controls and lets you move up with q. Once you have compiled your script with no errors, save your file by going to `File` >> `Save Module...`. 
 
 With that, you can now run the kaizo_brackeys.exe file again and breeze through all of the levels until you get to this screen: 
+
 <img src="../images/kaizo_brackeys_credits.png" alt="Kaizo Brackeys Menu" width="800">
 
 By pressing the exit button, all that happens is the game closes. It seems our previous assumption of the flag being in the credits was wrong. Our best bet now is to find more information about the game, and a good way of doing that is through a software called [Asset Ripper](https://assetripper.github.io/AssetRipper/articles/Downloads.html).
