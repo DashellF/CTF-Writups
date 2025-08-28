@@ -175,11 +175,11 @@ Once we save this code, we can run the program, and it successfully skips the cr
 
 *View of the 2 block tall obstacle
 <img src="../images/kaizo_brackeys_flag_one.png" alt="Kaizo Brackeys Menu" width="800">
+
 *View of "LIT..." from the right.
-
 <img src="../images/kaizo_brackeys_flag_two.png" alt="Kaizo Brackeys Menu" width="800">
-*View of "LIT..." from above.
 
+*View of "LIT..." from above.
 <img src="../images/kaizo_brackeys_flag_three.png" alt="Kaizo Brackeys Menu" width="800">
 
 By slowly moving forward and writing down each character, you spell the flag:
