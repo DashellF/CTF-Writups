@@ -10,7 +10,7 @@ Description:
 
 ---
 
-For this flag, we are given the game files for a game called Kaizo Brackeys. Going through the directorys, we can see that there is a file called UnityCrashHandler.exe. This tells us that this game was made with Unity. My first idea was to just run the Kaizo Brackeys.exe file. Running it brings up a menu where you can start the game.
+For this flag, we are given the game files for a game called Kaizo Brackeys. Going through the directories, we can see that there is a file called UnityCrashHandler.exe. This tells us that this game was made with Unity. My first idea was to just run the Kaizo Brackeys.exe file. Running it brings up a menu where you can start the game.
 
 <img src="../images/kaizo_brackeys_menu.png" alt="Kaizo Brackeys Menu" width="800">
 
@@ -32,7 +32,7 @@ Take a look at Credits, Level Complete, and Player Movement.
 
 In the Credits script, it seems just to be code for a button, and does not have much use to us.
 In the Level Complete scipt, it simply tells Unity to go to the next scene. The game will crash if you try and load a scene that doesn't exist, so this is for the best for now.
-The Player Movement script, we can see how the player input is recieved and used. This is the script that I edited first. Instead of moving foreward at a constantly increasing speed, how about we change the script to allow for wasd movement and a key that moves the player up? This can be done either through googling commands or chatGPT. To edit these scripts, simply right click the Player Movement script and click `Edit Class`. Once you are done editing the file, hit the `compile` button on the bottom right. If you have any issues compiling, try to edit each function and class seperately. 
+The Player Movement script, we can see how the player input is recieved and used. This is the script that I edited first. Instead of moving forward at a constantly increasing speed, how about we change the script to allow for wasd movement and a key that moves the player up? This can be done either through googling commands or chatGPT. To edit these scripts, simply right click the Player Movement script and click `Edit Class`. Once you are done editing the file, hit the `compile` button on the bottom right. If you have any issues compiling, try to edit each function and class seperately. 
 
 This is the script I used:
 
@@ -133,7 +133,7 @@ With that, you can now run the kaizo_brackeys.exe file again and breeze through 
 
 By pressing the exit button, all that happens is the game closes. It seems our previous assumption of the flag being in the credits was wrong. Our best bet now is to find more information about the game, and a good way of doing that is through a software called [Asset Ripper](https://assetripper.github.io/AssetRipper/articles/Downloads.html).
 
-Asset Ripper is built for gathering assets for a Unity .exe filespace and peicing them together to create a file that Unity can read again. To use it, run the AssetRipper.GUI.Free.exe file, then in the pop up open your Kaizo Brackeys_Data file through `File` >> `Open Folder`. Once that is done, you can immediately export it as a Unity Project by going to `Export`, Giving it a folder to print to (It will replace all files in that folder if it is not created in a new folder!), then clicking `Export Unity Project`.
+Asset Ripper is built for gathering assets for a Unity .exe filespace and peicing them together to create a file that Unity can read again. To use it, run the AssetRipper.GUI.Free.exe file, then in the pop up open your Kaizo Brackeys_Data file through `File` >> `Open Folder`. Once that is done, you can immediately export it as a Unity Project by going to `Export`, Giving it a folder to print to (IT WILL REPLACE ALL FILES IN A FOLDER if it is not created in a new folder!), then clicking `Export Unity Project`.
 
 One you have the Unity project exported, you can open that file through [Unity](https://unity.com/download).
 
@@ -181,6 +181,6 @@ Once we save this code, we can run the program, and it successfully skips the cr
 <img src="../images/kaizo_brackeys_flag_three.png" alt="Kaizo Brackeys Menu" width="800">
 *View of "LIT..." from above.
 
-By slowly moving foreward and writing down each character, you spell:
+By slowly moving forward and writing down each character, you spell:
 
 `LITCTF{I_HAD_TOO_MUCH_FUN_MAKING_THIS}`
