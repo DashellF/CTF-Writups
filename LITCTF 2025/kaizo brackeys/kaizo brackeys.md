@@ -176,6 +176,6 @@ Once we save this code, we can run the program, and it successfully skips the cr
 
 <img src="../images/kaizo_brackeys_flag_two.png" alt="Kaizo Brackeys Menu" width="400">
 
-By slowly moving foreward and writing down the flag, you get:
+By slowly moving foreward and writing down the flag, you spell:
 
 `LITCTF{I_HAD_TOO_MUCH_FUN_MAKING_THIS}`
