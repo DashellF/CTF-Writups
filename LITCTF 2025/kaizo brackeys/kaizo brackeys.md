@@ -32,7 +32,7 @@ Take a look at Credits, Level Complete, and Player Movement.
 
 In the Credits script, it seems just to be code for a button, and does not have much use to us.
 In the Level Complete scipt, it simply tells Unity to go to the next scene. The game will crash if you try and load a scene that doesn't exist, so this is for the best for now.
-The Player Movement script, we can see how the player input is recieved and used. This is the script that I edited first. Instead of moving foreward at a constantly increasing speed, how about we change the script to allow for wasd movement and a key that moves the player up? This can be done either through googling commands or chatGPT. To edit these scripts, simply right click the Player Movement script and click `Edit Class`. Once you are done editing the file, hit the `compile` button on the bottom right. If you have any issues compiling, try to edit each function and class seperately. 
+The Player Movement script, we can see how the player input is recieved and used. This is the script that I edited first. Instead of moving forward at a constantly increasing speed, how about we change the script to allow for wasd movement and a key that moves the player up? This can be done either through googling commands or chatGPT. To edit these scripts, simply right click the Player Movement script and click `Edit Class`. Once you are done editing the file, hit the `compile` button on the bottom right. If you have any issues compiling, try to edit each function and class seperately. 
 
 This is the script I used:
 
@@ -177,6 +177,6 @@ Once we save this code, we can run the program, and it successfully skips the cr
 
 <img src="../images/kaizo_brackeys_flag_two.png" alt="Kaizo Brackeys Menu" width="800">
 
-By slowly moving foreward and writing down each character, you spell:
+By slowly moving forward and writing down each character, you spell:
 
 `LITCTF{I_HAD_TOO_MUCH_FUN_MAKING_THIS}`
