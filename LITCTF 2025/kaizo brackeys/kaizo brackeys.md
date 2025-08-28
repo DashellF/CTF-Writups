@@ -12,15 +12,15 @@ Description:
 
 For this flag, we are given the game files for a game called Kaizo Brackeys. Going through the directorys, we can see that there is a file called UnityCrashHandler.exe. This tells us that this game was made with Unity. My first idea was to just run the Kaizo Brackeys.exe file. Running it brings up a menu where you can start the game.
 
-<img src="../images/kaizo_brackeys_menu.png" alt="Kaizo Brackeys Menu" width="400">
+<img src="../images/kaizo_brackeys_menu.png" alt="Kaizo Brackeys Menu" width="800">
 
 Upon starting the game, you are placed into a game where you must avoid obstacles in order to reach the end. 
 
-<img src="../images/kaizo_brackeys_game.png" alt="Kaizo Brackeys Menu" width="400">
+<img src="../images/kaizo_brackeys_game.png" alt="Kaizo Brackeys Menu" width="800">
 
 The first level is completable by going to the right. Once a level has been beaten, this screen comes up.
 
-<img src="../images/kaizo_brackeys_complete.png" alt="Kaizo Brackeys Menu" width="400">
+<img src="../images/kaizo_brackeys_complete.png" alt="Kaizo Brackeys Menu" width="800">
 
 We are then brought to the next level, which is impractical to beat without cheats. Doing all of this helps us understand how this game works. If you reach the end of a level, you are brought to the next level. With this in mind, it is viable (*but not true, more on that later) to believe that once we beat the game, we get the flag.
 
@@ -128,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
 This script lets you move around with wasd controls and lets you move up with q. Once you have compiled your script with no errors, save your file by going to `File` >> `Save Module...`. 
 
 With that, you can now run the kaizo_brackeys.exe file again and breeze through all of the levels until you get to this screen: 
-<img src="../images/kaizo_brackeys_credits.png" alt="Kaizo Brackeys Menu" width="400">
+<img src="../images/kaizo_brackeys_credits.png" alt="Kaizo Brackeys Menu" width="800">
 
 By pressing the exit button, all that happens is the game closes. It seems our previous assumption of the flag being in the credits was wrong. Our best bet now is to find more information about the game, and a good way of doing that is through a software called [Asset Ripper](https://assetripper.github.io/AssetRipper/articles/Downloads.html).
 
@@ -141,11 +141,11 @@ One you have the Unity project exported, you can open that file through [Unity](
 
 Once I got the file open in Unity, The first thing I did was look for the credits scene to see if I was missing something. What I saw in the scenes file was interesting.
 
-<img src="../images/kaizo_brackeys_scenes.png" alt="Kaizo Brackeys Menu" width="400">
+<img src="../images/kaizo_brackeys_scenes.png" alt="Kaizo Brackeys Menu" width="800">
 
 As I remembered, the game did not seem like it was 6 levels long. We can confirm this by looking at the scene list (`File` >> `Build Profiles`). From there, we can see that the scenes are organised as such:
 
-<img src="../images/kaizo_brackeys_scene_list.png" alt="Kaizo Brackeys Menu" width="400">
+<img src="../images/kaizo_brackeys_scene_list.png" alt="Kaizo Brackeys Menu" width="800">
 
 As we can see, the credits scene is executed early, not allowing us to get to the last two scenes. If we go back to our DnSpy application, we can get around this by simply skipping the credits scene in the `LevelComplete` script we looked at earlier.
 
@@ -172,10 +172,10 @@ public class LevelComplete : MonoBehaviour
 
 Once we save this code, we can run the program, and it successfully skips the credits scene and lets us go on to level 5 and 6. Level 5 you can complete normally, but if you take a close look at Level 6's format, you can tell that after the only 2 tall obstacle, it spells out the flag:
 
-<img src="../images/kaizo_brackeys_flag_one.png" alt="Kaizo Brackeys Menu" width="400">
+<img src="../images/kaizo_brackeys_flag_one.png" alt="Kaizo Brackeys Menu" width="800">
 
-<img src="../images/kaizo_brackeys_flag_two.png" alt="Kaizo Brackeys Menu" width="400">
+<img src="../images/kaizo_brackeys_flag_two.png" alt="Kaizo Brackeys Menu" width="800">
 
-By slowly moving foreward and writing down the flag, you spell:
+By slowly moving foreward and writing down each character, you spell:
 
 `LITCTF{I_HAD_TOO_MUCH_FUN_MAKING_THIS}`
