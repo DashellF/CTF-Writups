@@ -16,6 +16,7 @@ Time spent to solve: ~3-4 hours.
 ---
 
 When we first connect the server, we are prompted with a nice banner and a menu.
+
 <img src="../images/header.png" alt="Server header" width="800">
 
 We learn more about the challenge when we look at the About page:
@@ -30,6 +31,7 @@ Reading through these two pages, we learn how this challenge works. We are given
 
 With this, we see the intended user input is the emoji unicode from left to right, then the next row left to right.
 I was curious for more patterns, so I queried to start the challenge to gather a couple more example images. From these, a pattern emerges:
+
 <img src="../images/example2.png" alt="Challenge Image example two" width="800">
 <img src="../images/example3.png" alt="Challenge Image example three" width="800">
 
@@ -1264,7 +1266,7 @@ This code is run by `python3 solve.py --echo`
 
 I should note that just because you have the same files as me and run the same commands as me does not mean you will 100% get the flag. If you fail, try retraining the AI with better epocs.
 
-This solve.py uses numpy, pillow, the onnx python file mentioned above, and onnxruntime to connect to the server, send 2, read base64, split the image into 8 chunks (1 emoji per chunk), submit the chunks to the AI model, convert the AI model's output to the input the server is looking for, and repeat 100 times. It also reconnects when it fails since its not going to win every round.  This is a huge simplification of what really is going on, but thats the main gist. If you are curious, read the code... I tried to comment all files on my own (some of the comments are AI, sorry if I missed deleting some of them). 
+This solve.py uses numpy, pillow, the onnx python file mentioned above, and onnxruntime to connect to the server, send 2, read base64, split the image into 8 chunks (1 emoji per chunk), submit the chunks to the AI model, convert the AI model's output to the input the server is looking for, and repeat 100 times. It also reconnects when it fails since its not going to win every round.  This is a huge simplification of what really is going on, but thats the main gist. If you are curious, read the code... I tried to comment the files myself. 
 
 after running solve.py, it took a couple minutes but I do get successful run as seen here:
 
