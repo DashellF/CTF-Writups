@@ -1,2 +1,2 @@
 # CTF-Writups
-This is where I store all of my ctf write ups from the ctfs that I have competed in.
+This is where I store all of my ctf write ups from the ctfs that I have competed in. They are also viewable on my website at [dashellfinn.me](https://dashellfinn.me/?view=writups). They are all handwritten and not AI slop.

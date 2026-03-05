@@ -2,9 +2,13 @@
 
 Category: `rev`
 
+Difficulty: `easy`
+
 Description:
 
 > Made with a burning passion for pyjails (i.e. creating insane payloads just to bypass some random condition), I turned everything in this python script into pyjail tech! Here's a program that's suppose to print a flag. But something seems to be getting in the way...
+
+Time spent to solve: ~30 minutes.
 
 ---
 

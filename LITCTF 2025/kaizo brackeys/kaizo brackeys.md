@@ -2,12 +2,15 @@
 
 Category: `rev`
 
+Difficulty: `hard`
+
 Description:
 
 > only real ones copied those amazing tutorials
 > 
 > Note: the flag matches this regex: ^LITCTF\{[A-Z]+(?:_[A-Z]+)*\}$
 
+Time spent to solve: ~2-3 hours.
 
 ---
 
